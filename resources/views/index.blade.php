@@ -9,7 +9,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gray-100">
+<body class="">
     <!-- Navigation Bar -->
     <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -40,9 +40,9 @@
     <div class="container mx-auto py-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center">
             @foreach ($banners as $banner)
-                <a href="{{ route('banner1', $banner->id) }}" class="block transform transition duration-500 hover:scale-105">
+                <a href="{{ route('banner1', $banner->id) }}" class="block">
                     <img src="{{ asset('storage/' . $banner->image) }}" alt="{{ $banner->name }}"
-                        class="rounded-lg shadow-lg w-full h-64 object-contain">
+                        class="rounded-lg shadow-lg w-1/2 mx-auto object-cover  transform transition duration-500 hover:scale-105">
                     <p class="text-center mt-4 font-semibold text-gray-700">{{ $banner->name }}</p>
                 </a>
             @endforeach
@@ -50,8 +50,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+    <footer class="mt-5 bg-gray-900">
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <span class="text-center text-2xl font-semibold whitespace-nowrap dark:text-white">Frame

@@ -9,4 +9,4 @@ Route::get('/', function () {
 
 Route::get('/index', [BannerController::class, 'index'])->name('index');
 Route::get('/banners', [BannerController::class, 'showBanners']);
-Route::get('/banners/{id}', [BannerController::class, 'banner1'])->name('banner1');
+Route::get('/banners/{id}', [BannerController::class, 'banner1'])->name('banner');

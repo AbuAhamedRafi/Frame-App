@@ -49,7 +49,7 @@ window.updatePreview = function(url) {
 
   // When click download button, download canvas image
   document.getElementById("download").onclick = function(){
-    fabric.Image.fromURL("./assets/test_frame.png", function(img) {
+    fabric.Image.fromURL(bannerImageURL, function(img)  {
       imgRatio = img.width / img.height;
       var winWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
       ocw = canvas.width;

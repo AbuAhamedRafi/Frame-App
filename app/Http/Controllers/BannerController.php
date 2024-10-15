@@ -14,6 +14,7 @@ class BannerController extends Controller
     }
     public function banner1($id) {
         $banner = Banner::find($id);
+
         return view('banner1', compact('banner')); 
     }
 }
