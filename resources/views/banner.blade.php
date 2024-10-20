@@ -9,15 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="{{ asset('assets/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/prism.css') }}" rel="stylesheet">
-    <script src="{{ asset('assets/prism.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('assets/fabric_with_gestures.js') }}"></script>
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/fav.png') }}">
 </head>
 
 <body class="">
-    <!-- Navigation Bar -->
+    {{-- Navigation Bar --}}
     <nav class="bg-gray-900">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -29,7 +27,7 @@
             </div>
         </div>
     </nav>
-    <!-- Banner Selection -->
+    {{-- Banner Selection --}}
     <div id="wrapper">
         <div class="flex flex-col items-center justify-center bg-white text-black mt-10">
             <canvas id="preview_panel" class="border-2 shadow-xl">
@@ -55,7 +53,7 @@
 
         </div>
     </div>
-    <!-- Footer -->
+    {{-- Footer --}}
     <footer class="mt--10 bg-gray-900">
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
@@ -64,9 +62,9 @@
                 <ul
                     class="flex flex-col sm:flex-row items-center mb-6 text-sm font-medium text-gray-500 dark:text-gray-400">
                     <li><a href="#" class="hover:underline me-4 md:me-6">About</a></li>
-                    <li><a href="#"
+                    <li><a href="https://opensource.org/license/mit"
                             class="hover:underline me-4 md:me-6 border-r-2 border-l-2 px-3 mx-3">Licensing</a></li>
-                    <li><a href="#" class="hover:underline">Contact</a></li>
+                    <li><a href="https://github.com/AbuAhamedRafi" class="hover:underline">Contact</a></li>
                 </ul>
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
@@ -78,6 +76,7 @@
 <script>
     let bannerImageURL = "{{ asset('storage/' . $banner->image) }}"
 </script>
+{{-- Shows the download count --}}
 <script>
     $(document).ready(function() {
         $('#download').on('click', function() {

@@ -13,14 +13,12 @@ class BannerController extends Controller
         $banners = Banner::all();
         return view('index', compact('banners'));
     }
-    public function banner1($id)
+    public function banner($id)
     {
         $banner = Banner::find($id);
 
-        return view('banner1', compact('banner'));
+        return view('banner', compact('banner'));
     }
-
-
 
     public function increment(Request $request)
     {
@@ -29,10 +27,5 @@ class BannerController extends Controller
         $model->increment('count');
 
         return response()->json(['new_value' => $model->count]);
-
-
     }
-
-
-
 }
