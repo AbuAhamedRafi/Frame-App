@@ -28,7 +28,7 @@
     <!-- Main Content: Banner Selection Section -->
     <div class="container mx-auto py-8">
         <div class="flex justify-center">
-            <div class="w-full lg:w-1/2 bg-white rounded-lg shadow-lg p-6 sm:p-8">
+            <div class="w-full lg:w-2/3 border bg-white rounded-lg shadow-lg p-6 sm:p-8">
                 <h2 class="text-center text-2xl md:text-3xl font-bold mb-4">Choose Your Banner</h2>
                 <p class="text-center mb-4 text-gray-600">Select the banner you'd like to use, and you'll be redirected
                     to the corresponding page.</p>
@@ -39,11 +39,11 @@
 
     <!--  Image Buttons with Hover Animation -->
     <div class="container mx-auto py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
             @foreach ($banners as $banner)
                 <a href="{{ route('banner', $banner->id) }}" class="block">
                     <img src="{{ asset('storage/' . $banner->image) }}" alt="{{ $banner->name }}"
-                        class="rounded-lg shadow-lg w-1/2 mx-auto object-cover  transform transition duration-500 hover:scale-105">
+                        class="rounded-lg shadow-lg w-2/3 mx-auto object-cover  transform transition duration-500 hover:scale-105">
                     <p class="text-center mt-4 font-semibold text-gray-700">{{ $banner->name }}</p>
                 </a>
             @endforeach

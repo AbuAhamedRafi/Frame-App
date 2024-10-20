@@ -31,7 +31,7 @@
     </nav>
     <!-- Banner Selection -->
     <div id="wrapper">
-        <div class="flex flex-col items-center justify-center bg-white text-black h-screen">
+        <div class="flex flex-col items-center justify-center bg-white text-black mt-10">
             <canvas id="preview_panel" class="border-2 shadow-xl">
             </canvas>
             <div class="file-input-box">
@@ -50,26 +50,8 @@
                 Download
             </button>
 
-            <p>Downloaded: <span id="current-value">{{ $banner->count }}</span></p>
-
-            <script>
-                $(document).ready(function() {
-                    $('#download').on('click', function() {
-                        $.ajax({
-                            url: '{{ route('increment') }}',
-                            type: 'POST',
-                            data: {
-                                id: {{ $banner->id }},
-                                _token: '{{ csrf_token() }}' // CSRF token for security
-                            },
-                            success: function(response) {
-                                // Update the UI with the new value
-                                $('#current-value').text(response.new_value);
-                            }
-                        });
-                    });
-                });
-            </script>
+            <p class="bg-blue-800 text-white font-semibold text-sm py-2 px-2 rounded-md shadow-md mb-7">Times
+                Downloaded: <span id="current-value">{{ $banner->count }}</span></p>
 
         </div>
     </div>
@@ -95,6 +77,23 @@
 <script src="{{ asset('assets/main.js') }}" async="async"></script>
 <script>
     let bannerImageURL = "{{ asset('storage/' . $banner->image) }}"
+</script>
+<script>
+    $(document).ready(function() {
+        $('#download').on('click', function() {
+            $.ajax({
+                url: '{{ route('increment') }}',
+                type: 'POST',
+                data: {
+                    id: {{ $banner->id }},
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    $('#current-value').text(response.new_value);
+                }
+            });
+        });
+    });
 </script>
 
 </html>
