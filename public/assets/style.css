@@ -78,9 +78,8 @@ html, body{
   margin-bottom: 2vw;
   
 }
-.file-input::-webkit-file-upload-button {
+/* .file-input::-webkit-file-upload-button {
   /* visibility: hidden; */
-}
 
 
 .upper-canvas {

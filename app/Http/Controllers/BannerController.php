@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Banner;
 
 use Illuminate\Http\Request;
@@ -12,9 +13,26 @@ class BannerController extends Controller
         $banners = Banner::all();
         return view('index', compact('banners'));
     }
-    public function banner1($id) {
+    public function banner1($id)
+    {
         $banner = Banner::find($id);
 
-        return view('banner1', compact('banner')); 
+        return view('banner1', compact('banner'));
     }
+
+
+
+    public function increment(Request $request)
+    {
+        $model = Banner::find($request->id);
+        
+        $model->increment('count');
+
+        return response()->json(['new_value' => $model->count]);
+
+
+    }
+
+
+
 }

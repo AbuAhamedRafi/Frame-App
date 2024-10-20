@@ -24,6 +24,7 @@ class BannerResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
+                Forms\Components\TextInput::make('count')->numeric(),
                 Forms\Components\FileUpload::make('image')->disk('public')->required(),
             ]);
     }
@@ -33,6 +34,7 @@ class BannerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('count'),
                 Tables\Columns\ImageColumn::make('image'),
             ])
             ->filters([

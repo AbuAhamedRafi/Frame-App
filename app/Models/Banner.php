@@ -12,5 +12,6 @@ class Banner extends Model
         'name',
         'email',
         'image',
+        'count'
     ];
 }

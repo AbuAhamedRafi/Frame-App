@@ -7,16 +7,17 @@
     <title>Banner Selection | Frame Generator</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/fav.png') }}">
 </head>
 
 <body class="">
     <!-- Navigation Bar -->
-    <nav class="bg-gray-800">
+    <nav class="bg-gray-900">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <div class="text-center text-2xl text-white font-bold">
-                        <h1>Frame Generator™</h1>
+                        <a href="{{ route('index') }}" class="btn btn-primary">Frame Generator™</a>
                     </div>
                 </div>
             </div>
@@ -40,13 +41,13 @@
     <div class="container mx-auto py-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center">
             @foreach ($banners as $banner)
-                <a href="{{ route('banner1', $banner->id) }}" class="block">
+                <a href="{{ route('banner', $banner->id) }}" class="block">
                     <img src="{{ asset('storage/' . $banner->image) }}" alt="{{ $banner->name }}"
                         class="rounded-lg shadow-lg w-1/2 mx-auto object-cover  transform transition duration-500 hover:scale-105">
                     <p class="text-center mt-4 font-semibold text-gray-700">{{ $banner->name }}</p>
                 </a>
             @endforeach
-            
+
         </div>
     </div>
 
