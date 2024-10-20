@@ -1,4 +1,4 @@
-Frame Generator™
+## Frame Generator™ ![](/public/favicon.ico)
 
 Welcome to **Frame Generator™**, a web application that allows users to upload an image and add a customized banner (frame) to it. This app leverages the power of Fabric.js for canvas manipulation and Tailwind CSS for styling, providing a smooth user experience for generating framed images. 
 
