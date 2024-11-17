@@ -27,3 +27,4 @@
         "SESSION_DRIVER": "cookie"
     }
 }
+{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
